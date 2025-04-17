@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="canonical" href="https://www.jorgemar.com/papers/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preprints – Jorge Martinez-Gil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9fb;
+      color: #1a1a1a;
+    }
+
+    header {
+      background: linear-gradient(to right, #4b6cb7, #182848);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    .search-bar {
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 10px;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 12px 18px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card a {
+      font-weight: 600;
+      color: #0d6efd;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .size {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 20px;
+      background-color: #182848;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📄 Preprints – Jorge Martinez-Gil</h1>
+</header>
+
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search by filename..." onkeyup="filterPreprints()" />
+</div>
+
+<div class="grid" id="preprintGrid">
+  <!-- Preprints (example entries below) -->
+  <div class="card">
+    <a href="Fuzzy-Aggregation-Semantic-Similarity.pdf" target="_blank">Accurate semantic similarity measurement of biomedical nomenclature by
+means of fuzzy logic</a>
+    <div class="size">217 KB</div>
+  </div>
+  <div class="card">
+    <a href="Fuzzy-Aggregation-Semantic-Similarity.pdf" target="_blank">Accurate semantic similarity measurement of biomedical nomenclature by
+means of fuzzy logic</a>
+    <div class="size">217 KB</div>
+  </div>
+  <div class="card">
+    <a href="Neurofuzzy-Similarity.pdf" target="_blank">Neurofuzzy-Similarity.pdf</a>
+    <div class="size">306 KB</div>
+  </div>
+  <div class="card">
+    <a href="Semantic-Similarity-Using-Search-Engines.pdf" target="_blank">Semantic-Similarity-Using-Search-Engines.pdf</a>
+    <div class="size">944 KB</div>
+  </div>
+
+  <!-- Repeat the above block for each preprint -->
+</div>
+
+<footer>
+  If you cannot find a file, feel free to contact me: jorge.martinez-gil[at]scch.at
+</footer>
+
+<script>
+  function filterPreprints() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('#preprintGrid .card');
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      card.style.display = text.includes(input) ? 'flex' : 'none';
+    });
+  }
+</script>
+
+</body>
+</html>
+
