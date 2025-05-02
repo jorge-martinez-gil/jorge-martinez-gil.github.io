@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jorge-martinez-gil.github.io/sitemap.xml
